@@ -30,13 +30,43 @@ Follow these steps to set up and run the project on your local machine.
 
 ### Installation
 
-1. git clone https://github.com/your-username/laravel-calendar-app.gitcd laravel-calendar-app
-1. composer installRun the following command to install the required PHP dependencies:
-1. npm installUse npm to install the required JavaScript dependencies:
-1. cp .env.example .envDB_CONNECTION=mysqlDB_HOST=127.0.0.1DB_PORT=3306DB_DATABASE=your_database_nameDB_USERNAME=your_database_userDB_PASSWORD=your_database_passwordCopy the `.env.example` file to create a new `.env` file:Update the `.env` file with your database credentials and other environment-specific settings:
-1. php artisan key:generateLaravel uses an application key for encryption and security purposes. Run the following command to generate the key:This step is essential for the application to function properly. The generated key will be stored in the `.env` file under the `APP_KEY` variable.
-1. php artisan migrateSet up the database tables by running the migrations:
-1. npm run devCompile the frontend assets using Laravel Mix:
+```
+git clone https://github.com/your-username/laravel-calendar-app.gitcd laravel-calendar-app
+```
+Run the following command to install the required PHP dependencies:
+```
+composer install
+```
+Use npm to install the required JavaScript dependencies:
+```
+npm install
+```
+
+Copy the `.env.example` file to create a new `.env` file:Update the `.env` file with your database credentials and other environment-specific settings:
+```
+cp .env.example .env
+```
+
+```
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=your_database_name
+DB_USERNAME=your_database_user
+DB_PASSWORD=your_database_password
+```
+Laravel uses an application key for encryption and security purposes. Run the following command to generate the key:This step is essential for the application to function properly. The generated key will be stored in the `.env` file under the `APP_KEY` variable.
+```
+php artisan key:generate
+```
+Set up the database tables by running the migrations:
+```
+php artisan migrate
+```
+Compile the frontend assets using Laravel Mix:
+```
+npm run dev
+```
 
 ---
 
